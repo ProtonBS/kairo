@@ -25,7 +25,7 @@ export default async function Home() {
 				{homePageCards("anime")}
 				{homePageCards("movies")}
 				{homePageCards("kdrama")}
-			//	{homePageCards("manga")}
+	
 				{homePageCards("web-series")}
 			</section>
 		</main>
