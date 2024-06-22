@@ -54,51 +54,33 @@ export default function Home() {
                     background-color: #00bfff; /* Light blue */
                     border: none;
                     border-radius: 10px;
-                    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+                    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+                    transition: background-color 0.3s, box-shadow 0.3s;
                     position: relative;
                     overflow: hidden;
-                    transition: background-color 0.3s, box-shadow 0.3s;
                 }
 
                 .nav-button::before {
                     content: "";
                     position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    width: 300%;
-                    height: 300%;
-                    background-color: rgba(255, 255, 255, 0.2);
-                    border-radius: 50%;
-                    transform: translate(-50%, -50%);
-                    z-index: 0;
-                    animation: liquid-evaporate 2s infinite linear;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(255, 255, 255, 0.1);
+                    border-radius: 10px;
+                    box-shadow: 0 0 15px #00bfff, 0 0 20px #00bfff, 0 0 30px #00bfff, 0 0 40px #00bfff, 0 0 50px #00bfff, 0 0 60px #00bfff, 0 0 75px #00bfff;
+                    opacity: 0;
+                    transition: opacity 0.3s;
                 }
 
-                @keyframes liquid-evaporate {
-                    0% {
-                        width: 300%;
-                        height: 300%;
-                        opacity: 0.2;
-                    }
-                    50% {
-                        width: 500%;
-                        height: 500%;
-                        opacity: 0.1;
-                    }
-                    100% {
-                        width: 700%;
-                        height: 700%;
-                        opacity: 0;
-                    }
+                .nav-button:hover::before {
+                    opacity: 1;
                 }
 
                 .nav-button:hover {
                     background-color: #00e5ff; /* Light blue on hover */
-                    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
-                }
-
-                .nav-button:hover::before {
-                    animation: none; /* Stop animation on hover */
+                    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
                 }
             `}</style>
         </main>
