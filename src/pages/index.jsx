@@ -46,21 +46,59 @@ export default function Home() {
 
                 .nav-button {
                     display: inline-block;
-                    padding: 15px 40px;
+                    padding: 20px 50px;
                     color: #ffffff;
                     font-size: 24px;
                     text-transform: uppercase;
                     text-decoration: none;
-                    background-color: #e50914;
+                    background-color: #00bfff; /* Light blue */
                     border: none;
-                    border-radius: 5px;
+                    border-radius: 10px;
                     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-                    transition: transform 0.2s ease-in-out;
+                    position: relative;
+                    overflow: hidden;
+                    transition: background-color 0.3s, box-shadow 0.3s;
+                }
+
+                .nav-button::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 300%;
+                    height: 300%;
+                    background-color: rgba(255, 255, 255, 0.2);
+                    border-radius: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 0;
+                    animation: liquid-evaporate 2s infinite linear;
+                }
+
+                @keyframes liquid-evaporate {
+                    0% {
+                        width: 300%;
+                        height: 300%;
+                        opacity: 0.2;
+                    }
+                    50% {
+                        width: 500%;
+                        height: 500%;
+                        opacity: 0.1;
+                    }
+                    100% {
+                        width: 700%;
+                        height: 700%;
+                        opacity: 0;
+                    }
                 }
 
                 .nav-button:hover {
-                    transform: translateY(-5px);
+                    background-color: #00e5ff; /* Light blue on hover */
                     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+                }
+
+                .nav-button:hover::before {
+                    animation: none; /* Stop animation on hover */
                 }
             `}</style>
         </main>
