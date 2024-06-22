@@ -39,9 +39,11 @@ export default function Home() {
                 }
 
                 .buttons-container {
+                    position: relative; /* Ensure relative positioning for absolute children */
                     display: flex;
                     flex-direction: column;
                     gap: 20px;
+                    z-index: 0; /* Ensure buttons are behind the liquid effect */
                 }
 
                 .nav-button {
@@ -66,29 +68,36 @@ export default function Home() {
                     );
                     /* 3D shadow */
                     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+                    z-index: 1; /* Ensure buttons are above the liquid effect */
                 }
 
                 .nav-button::before {
                     content: "";
                     position: absolute;
-                    top: 100%;
+                    top: 50%;
                     left: 50%;
-                    transform: translateX(-50%);
-                    width: 10px;
-                    height: 10px;
+                    transform: translate(-50%, -50%);
+                    width: 300%; /* Make sure the liquid effect spans around the button */
+                    height: 300%;
                     background-color: rgba(255, 255, 255, 0.5);
                     border-radius: 50%;
-                    animation: droplets 2s infinite linear;
+                    animation: pulse 4s linear infinite; /* Adjust animation duration and timing as desired */
                     z-index: -1;
+                    pointer-events: none; /* Ensure the pseudo-element doesn't interfere with pointer events */
+                    opacity: 0; /* Initially hide to avoid covering the button text */
                 }
 
-                @keyframes droplets {
+                @keyframes pulse {
                     0% {
-                        transform: translate(-50%, 0);
-                        opacity: 1;
+                        transform: scale(0);
+                        opacity: 0.7;
+                    }
+                    50% {
+                        transform: scale(1);
+                        opacity: 0.1;
                     }
                     100% {
-                        transform: translate(-50%, -150%);
+                        transform: scale(2);
                         opacity: 0;
                     }
                 }
@@ -96,30 +105,6 @@ export default function Home() {
                 .nav-button:hover {
                     background-color: #00e5ff; /* Light blue on hover */
                     box-shadow: 0 8px 35px rgba(0, 0, 0, 0.8);
-                }
-
-                /* Additional styles for the liquid droplets effect */
-                .nav-button::before {
-                    content: "";
-                    position: absolute;
-                    width: 10px;
-                    height: 10px;
-                    background-color: rgba(255, 255, 255, 0.7);
-                    border-radius: 50%;
-                    animation: droplets 2s infinite linear;
-                    z-index: -1;
-                    pointer-events: none; /* Ensure the pseudo-element doesn't interfere with pointer events */
-                }
-
-                @keyframes droplets {
-                    0% {
-                        transform: translateY(0) scale(1);
-                        opacity: 1;
-                    }
-                    100% {
-                        transform: translateY(-100px) scale(0.5);
-                        opacity: 0;
-                    }
                 }
             `}</style>
         </main>
