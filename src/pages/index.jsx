@@ -58,6 +58,14 @@ export default function Home() {
                     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
                     overflow: hidden;
                     transition: background-color 0.3s, box-shadow 0.3s;
+                    /* Neon effect */
+                    background-image: linear-gradient(
+                        to right,
+                        #00bfff 0%,
+                        #00e5ff 100%
+                    );
+                    /* 3D shadow */
+                    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
                 }
 
                 .nav-button::before {
@@ -87,7 +95,7 @@ export default function Home() {
 
                 .nav-button:hover {
                     background-color: #00e5ff; /* Light blue on hover */
-                    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+                    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.8);
                 }
             `}</style>
         </main>
