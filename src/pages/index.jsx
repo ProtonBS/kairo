@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 export default function Home() {
-    const neonButton = (title, href) => {
+    const navButton = (title, href) => {
         return (
             <Link href={href} key={title}>
-                <a className="neon-button">{title}</a>
+                <a className="nav-button">{title}</a>
             </Link>
         );
     };
@@ -12,23 +12,22 @@ export default function Home() {
     return (
         <main className="main-container">
             <section className="buttons-container">
-                {neonButton("Movies", "/movies")}
-                {neonButton("Anime", "/anime")}
-                {neonButton("K-Drama", "/kdrama")}
-                {neonButton("Web Series", "/web-series")}
+                {navButton("Movies", "/movies")}
+                {navButton("Anime", "/anime")}
+                {navButton("K-Drama", "/kdrama")}
+                {navButton("Web Series", "/web-series")}
             </section>
             <style jsx global>{`
                 body {
                     margin: 0;
                     padding: 0;
                     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-                    background-color: #121212;
+                    background-color: #000000;
                     color: #ffffff;
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     height: 100vh;
-                    overflow: hidden;
                 }
 
                 .main-container {
@@ -36,7 +35,6 @@ export default function Home() {
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
-                    height: 100vh;
                     text-align: center;
                 }
 
@@ -46,53 +44,23 @@ export default function Home() {
                     gap: 20px;
                 }
 
-                .neon-button {
+                .nav-button {
                     display: inline-block;
-                    padding: 15px 30px;
-                    color: #fff;
-                    font-size: 20px;
+                    padding: 15px 40px;
+                    color: #ffffff;
+                    font-size: 24px;
                     text-transform: uppercase;
                     text-decoration: none;
-                    background-color: #1f1f1f;
-                    border: 2px solid #00ff99;
+                    background-color: #e50914;
+                    border: none;
                     border-radius: 5px;
-                    box-shadow: 0 0 5px #00ff99, 0 0 10px #00ff99, 0 0 20px #00ff99, 0 0 30px #00ff99;
-                    transition: box-shadow 0.3s ease-in-out;
-                    text-align: center;
-                    position: relative;
+                    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+                    transition: transform 0.2s ease-in-out;
                 }
 
-                .neon-button::before,
-                .neon-button::after {
-                    content: "";
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    border: 2px solid #00ff99;
-                    border-radius: 5px;
-                    box-shadow: 0 0 5px #00ff99, 0 0 10px #00ff99, 0 0 20px #00ff99, 0 0 30px #00ff99;
-                    transition: all 0.3s ease-in-out;
-                    opacity: 0;
-                }
-
-                .neon-button:hover::before,
-                .neon-button:hover::after {
-                    opacity: 1;
-                    transform: scale(1.1);
-                }
-
-                .neon-button::before {
-                    transform: translate(-10px, -10px);
-                }
-
-                .neon-button::after {
-                    transform: translate(10px, 10px);
-                }
-
-                .neon-button:hover {
-                    box-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99, 0 0 30px #00ff99, 0 0 40px #00ff99;
+                .nav-button:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
                 }
             `}</style>
         </main>
