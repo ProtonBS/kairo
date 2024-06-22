@@ -1,22 +1,35 @@
-// pages/index.jsx
+import { Card, CardBody } from "@nextui-org/react";
+import Link from "next/link";
 
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
+export default async function Home() {
+	const homePageCards = (title) => {
+		return (
+			<Link href={`/${title}`} className="focus:scale(90) mb-2 lg:mx-1">
+				<Card
+					isPressable
+					shadow="sm"
+					isHoverable
+					className="bg-[#1f1f1f] border border-zinc-500"
+				>
+					<CardBody>
+						<p className="text-xl lg:text-2xl">{title}</p>
+					</CardBody>
+				</Card>
+			</Link>
+		);
+	};
 
-export default function Home() {
-  const router = useRouter();
-
-  useEffect(() => {
-    router.push('/anime');
-  }, []);
-
-  // This component doesn't need to render anything since it immediately redirects
-  return null;
+	return (
+		<main>
+			<section className="flex h-[90dvh] w-screen flex-col items-center justify-center lg:flex-row">
+				{homePageCards("anime")}
+				{homePageCards("movies")}
+				{homePageCards("kdrama")}
+				{homePageCards("manga")}
+				{homePageCards("web-series")}
+			</section>
+		</main>
+	);
 }
 
-export async function getServerSideProps() {
-  // Optional: You can add server-side logic here if needed
-  return {
-    props: {}, // Required for getServerSideProps
-  };
-}
+// Test push
