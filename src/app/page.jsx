@@ -1,15 +1,15 @@
 import { useEffect } from 'react';
-import { useRouter } from 'next/router';
+import { useNavigation } from 'next/navigation'; // Import useNavigation instead of useRouter
 import { Card, CardBody } from "@nextui-org/react";
 import Link from "next/link";
 
 export default function Home() {
-    const router = useRouter();
+    const navigation = useNavigation(); // Use useNavigation hook
 
     useEffect(() => {
         // Redirect to the target directory
-        router.push('/anime');
-    }, [router]);
+        navigation.navigate('/anime');
+    }, [navigation]);
 
     // Optionally, you can conditionally render the original content if needed
     // For example, show the content for a few seconds before redirecting
