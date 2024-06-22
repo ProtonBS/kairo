@@ -55,27 +55,34 @@ export default function Home() {
                     border: none;
                     border-radius: 10px;
                     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
-                    transition: background-color 0.3s, box-shadow 0.3s;
                     position: relative;
                     overflow: hidden;
+                    transition: background-color 0.3s, box-shadow 0.3s;
                 }
 
                 .nav-button::before {
                     content: "";
                     position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background-color: rgba(255, 255, 255, 0.1);
-                    border-radius: 10px;
-                    box-shadow: 0 0 15px #00bfff, 0 0 20px #00bfff, 0 0 30px #00bfff, 0 0 40px #00bfff, 0 0 50px #00bfff, 0 0 60px #00bfff, 0 0 75px #00bfff;
-                    opacity: 0;
-                    transition: opacity 0.3s;
+                    top: 100%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 6px;
+                    height: 6px;
+                    background-color: rgba(255, 255, 255, 0.5);
+                    border-radius: 50%;
+                    animation: droplets 2s infinite linear;
+                    z-index: -1;
                 }
 
-                .nav-button:hover::before {
-                    opacity: 1;
+                @keyframes droplets {
+                    0% {
+                        transform: translate(-50%, 0);
+                        opacity: 1;
+                    }
+                    100% {
+                        transform: translate(-50%, -100%);
+                        opacity: 0;
+                    }
                 }
 
                 .nav-button:hover {
