@@ -1,4 +1,3 @@
-import { Card, CardBody } from "@nextui-org/react";
 import Link from "next/link";
 
 export async function getServerSideProps() {
@@ -12,34 +11,73 @@ export async function getServerSideProps() {
 }
 
 export default function Home() {
-    const homePageCards = (title) => {
+    const neonButton = (title, href) => {
         return (
-            <Link href={`/${title}`} className="focus:scale(90) mb-2 lg:mx-1">
-                <Card
-                    isPressable
-                    shadow="sm"
-                    isHoverable
-                    className="bg-[#1f1f1f] border border-zinc-500"
-                >
-                    <CardBody>
-                        <p className="text-xl lg:text-2xl">{title}</p>
-                    </CardBody>
-                </Card>
+            <Link href={href}>
+                <a className="neon-button">{title}</a>
             </Link>
         );
     };
 
     return (
-        <main>
-            <section className="flex h-[90dvh] w-screen flex-col items-center justify-center lg:flex-row">
-                {homePageCards("anime")}
-                {homePageCards("movies")}
-                {homePageCards("kdrama")}
-                {homePageCards("manga")}
-                {homePageCards("web-series")}
+        <main className="main-container">
+            <section className="buttons-container">
+                {neonButton("Movies", "/movies")}
+                {neonButton("Anime", "/anime")}
+                {neonButton("K-Drama", "/kdrama")}
+                {neonButton("Web Series", "/web-series")}
             </section>
         </main>
     );
 }
 
-// Test push
+// Add some basic global styles
+export const styles = (
+    <style jsx global>{`
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .neon-button {
+            display: inline-block;
+            padding: 15px 30px;
+            color: #fff;
+            font-size: 20px;
+            text-transform: uppercase;
+            text-decoration: none;
+            background-color: #1f1f1f;
+            border: 2px solid #00ff99;
+            border-radius: 5px;
+            box-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99, 0 0 30px #00ff99, 0 0 40px #00ff99;
+            transition: box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .neon-button:hover {
+            box-shadow: 0 0 20px #00ff99, 0 0 30px #00ff99, 0 0 40px #00ff99, 0 0 50px #00ff99;
+        }
+    `}</style>
+);
