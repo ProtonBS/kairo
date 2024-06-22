@@ -1,21 +1,21 @@
 import Link from "next/link";
 
 export default function Home() {
-    const navButton = (title, href) => {
-        return (
-            <Link href={href} key={title}>
-                <a className="nav-button">{title}</a>
-            </Link>
-        );
-    };
-
     return (
         <main className="main-container">
             <section className="buttons-container">
-                {navButton("Movies", "/movies")}
-                {navButton("Anime", "/anime")}
-                {navButton("K-Drama", "/kdrama")}
-                {navButton("Web Series", "/web-series")}
+                <Link href="/movies">
+                    <a className="nav-button">Movies</a>
+                </Link>
+                <Link href="/anime">
+                    <a className="nav-button">Anime</a>
+                </Link>
+                <Link href="/kdrama">
+                    <a className="nav-button">K-Drama</a>
+                </Link>
+                <Link href="/web-series">
+                    <a className="nav-button">Web Series</a>
+                </Link>
             </section>
             <style jsx global>{`
                 body {
@@ -45,6 +45,7 @@ export default function Home() {
                 }
 
                 .nav-button {
+                    position: relative;
                     display: inline-block;
                     padding: 20px 50px;
                     color: #ffffff;
@@ -55,7 +56,6 @@ export default function Home() {
                     border: none;
                     border-radius: 10px;
                     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
-                    position: relative;
                     overflow: hidden;
                     transition: background-color 0.3s, box-shadow 0.3s;
                 }
@@ -66,8 +66,8 @@ export default function Home() {
                     top: 100%;
                     left: 50%;
                     transform: translateX(-50%);
-                    width: 6px;
-                    height: 6px;
+                    width: 10px;
+                    height: 10px;
                     background-color: rgba(255, 255, 255, 0.5);
                     border-radius: 50%;
                     animation: droplets 2s infinite linear;
@@ -80,7 +80,7 @@ export default function Home() {
                         opacity: 1;
                     }
                     100% {
-                        transform: translate(-50%, -100%);
+                        transform: translate(-50%, -150%);
                         opacity: 0;
                     }
                 }
