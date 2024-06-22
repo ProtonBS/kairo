@@ -25,8 +25,8 @@ export default function Home() {
                     background-color: #000000;
                     color: #ffffff;
                     display: flex;
-                    justify-content: center;
                     align-items: center;
+                    justify-content: center;
                     height: 100vh;
                 }
 
@@ -96,6 +96,30 @@ export default function Home() {
                 .nav-button:hover {
                     background-color: #00e5ff; /* Light blue on hover */
                     box-shadow: 0 8px 35px rgba(0, 0, 0, 0.8);
+                }
+
+                /* Additional styles for the liquid droplets effect */
+                .nav-button::before {
+                    content: "";
+                    position: absolute;
+                    width: 10px;
+                    height: 10px;
+                    background-color: rgba(255, 255, 255, 0.7);
+                    border-radius: 50%;
+                    animation: droplets 2s infinite linear;
+                    z-index: -1;
+                    pointer-events: none; /* Ensure the pseudo-element doesn't interfere with pointer events */
+                }
+
+                @keyframes droplets {
+                    0% {
+                        transform: translateY(0) scale(1);
+                        opacity: 1;
+                    }
+                    100% {
+                        transform: translateY(-100px) scale(0.5);
+                        opacity: 0;
+                    }
                 }
             `}</style>
         </main>
