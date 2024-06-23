@@ -140,7 +140,7 @@ const EpisodesContainer = ({ data }) => {
             )}
             {buttonGroups}
             {/* Social share buttons */}
-            <div className="socializer" data-features="32px,squircle,float,fluid,icon-white,bdr-sm,bdr-grey,sw-1,pad" data-sites="telegram,whatsapp,discord,instagram,pinterest,twitter,threads,more,email"></div>
+            <div className="socializer mt-4" data-features="32px,squircle,float,fluid,icon-white,bdr-sm,bdr-grey,sw-1,pad" data-sites="telegram,whatsapp,discord,instagram,pinterest,twitter,threads,more,email"></div>
         </main>
     );
 };
