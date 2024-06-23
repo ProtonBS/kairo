@@ -5,13 +5,12 @@ import { lexend } from "../../config/fonts";
 import { Providers } from "./themeManager";
 
 export const metadata = {
-	title: "Dramalama",
+	title: "Ani.MoM",
 	description:
-		"Online service to watch kdramas and anime for free. You can also read and download mangas for free.",
+		"Best Website to watch kdramas and anime for free. You can also read and download mangas for free.",
 	generator: "Next.js",
-	applicationName: "Dramalama",
-	authors: [{ name: "zephex", url: "https://github.com/real-zephex" }],
-	creator: "Zephex",
+	applicationName: "Ani.MoM",
+	creator: "Higan",
 	keywords: [
 		"Kdrama",
 		"Anime",
@@ -45,7 +44,7 @@ export const metadata = {
 		yandex: "yandex",
 		yahoo: "yahoo",
 		other: {
-			me: ["zephex@duck.com"],
+			me: ["https://telegram.dog/zoronewera"],
 		},
 	},
 };
