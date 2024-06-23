@@ -3,8 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-	title: "Dramalama TV-Shows",
-	description: "Web series page for Dramalama",
+	title: "Ani.MoM TV-Shows",
+	description: "Web series page for Ani.MoM",
 };
 
 import {
