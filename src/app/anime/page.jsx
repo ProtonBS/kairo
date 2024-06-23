@@ -3,8 +3,8 @@ import Image from "next/image";
 import styles from "../page.module.css";
 
 export const metadata = {
-	title: "Dramalama Anime",
-	description: "Anime page for Dramalama",
+	title: "Ani.MoM",
+	description: "Watch Animes On Ani.MoM",
 };
 
 import { top_airing, recent, popular } from "./data-fetch/request";
