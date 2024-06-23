@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from 'react';
 import { MediaPlayer, MediaProvider } from '@vidstack/react';
 import '@vidstack/react/player/styles/default/theme.css';
