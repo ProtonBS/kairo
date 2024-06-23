@@ -2,8 +2,8 @@ import { Card, CardHeader, CardBody, Link } from "@nextui-org/react";
 import Image from "next/image";
 
 export const metadata = {
-	title: "Dramalama Movies",
-	description: "Movies page for Dramalama",
+	title: "Ani.MoM Movies",
+	description: "Movies page for Ani.MoM",
 };
 
 import MovieSearchBar from "./components/search";
