@@ -2,7 +2,7 @@ import { Card, CardHeader, CardBody, Link } from "@nextui-org/react";
 import Image from "next/image";
 
 export const metadata = {
-	title: "Ani.MoM Movies",
+	title: "Ani.MoM - Movies",
 	description: "Movies page for Ani.MoM",
 };
 
