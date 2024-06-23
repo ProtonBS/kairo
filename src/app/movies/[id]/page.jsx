@@ -14,6 +14,17 @@ const MovieInfoPage = async ({ params }) => {
 		<section className="pt-2 m-auto w-full lg:w-9/12">
 			<MovieVideoPlayer id={data.id} />
 			<div className="flex items-center">
+				{/* Ads code */}
+				<div id="shareusadx-6739644104098893-3323887418">
+					<script type="module" src="https://securepubads.shareusads.com/scripts/tag/js/sgpt.js"></script>
+					<script>
+						window._shareustag = window._shareustag || { cmd: [] };
+						_shareustag.cmd.push(function() {
+							var slot1 = _shareustag.defineSlot('/shareusadx/6739644104098893/3323887418/AniEo Banner 1', ["Responsive"], 'shareusadx-6739644104098893-3323887418');
+						});
+					</script>
+				</div>
+				{/* Movie poster */}
 				<Image
 					isBlurred
 					shadow="md"
